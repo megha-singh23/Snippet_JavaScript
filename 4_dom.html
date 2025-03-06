@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // console.log(document);
+        // console.dir(document);   //for object----
+    </script>
+</head>
+<body>
+     
+    <!-- DOM-> Document object model -->
+
+    <!-- window->document -->
+    <!-- <h1 id="result">Hello!!!!</h1>    Child of body    -->
+
+    <h2 class="head">bnxjx</h2>
+    <h2 class="head">sxnshb</h2>
+    <h2 class="head">jnubxh</h2>
+    <h2 class="head">uyhws</h2>
+
+    <button onclick="getimg()">Get Image</button>
+    <button onclick="changeimg()">change Image</button>
+
+
+
+    <!-- <ul>      Child of body   
+        <li></li>  Child of ul 
+    </ul> -->
+
+
+
+<script>
+    // const h1Obj=document.getElementById("result");
+    // const h1Obj=document.querySelector("#result");
+    
+    // console.log(h1Obj);
+    // console.dir(h1Obj);
+
+    // const h1Obj=document.querySelector(".head");
+    // const h1Obj=document.querySelectorAll(".head");
+    const h1Obj=document.getElementsByClassName("head");
+
+    h1Obj[0].innerHTML="Hello World 1";
+    h1Obj[1].innerHTML="Hello World 2";
+    h1Obj[2].innerHTML="Hello World 3";
+    h1Obj[3].innerHTML="Hello World 4";
+
+    // let h1Ref=document.createElement("h1");
+    // h1Ref.innerHTML="Hiiii";
+
+    // document.body.append(h1Ref);
+    // document.body.appendChild(h1Ref);
+
+    let imgRef=document.createElement("img");
+
+    function getimg(){
+        imgRef.src="https://m.media-amazon.com/images/I/61Qe0euJJZL.jpg";
+        imgRef.style.height="100px";
+        document.body.append(imgRef);
+    }
+     function changeimg(){
+        console.log(imgRef.getAttribute("src"));
+        // document.body.removeChild(imgRef);
+        imgRef.setAttribute("src","https://zebronics.com/cdn/shop/collections/Laptop_collection_banner.jpg?v=1696592489&width=2600");
+        imgRef.style.width="200px";
+
+    }
+
+
+</script>
+
+</body>
+</html>

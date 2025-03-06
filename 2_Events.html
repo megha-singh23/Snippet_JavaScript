@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function fetch(){
+            // console.log("Button 1");
+            document.getElementById("res").innerHTML="Hello World!!";
+        }
+    </script>
+</head>
+<body>
+
+    <h1 id="res"></h1>
+    <!-- <button onclick="fetch()">Click Me</button> -->
+
+    <!-- <button onclick="changeStyle(this)">Click Me</button>
+    <button onclick="changeStyle(this)">Click Me</button>
+    <button onclick="changeStyle(this)">Click Me</button>
+    <button onclick="changeStyle(this)">Click Me</button> -->
+
+    <button>Click Me</button>
+    <button>Click Me</button>
+    <button>Click Me</button>
+    <button>Click Me</button>
+
+</body>
+<script>
+    const btnArr=document.getElementsByTagName("button");
+    // btnArr[0].style.backgroundColor="GreenYellow";
+    btnArr[1].style.backgroundColor="GreenYellow";
+
+    // btnArr[0].onclick=()=>{
+    //     console.log("btn 1 clicked")
+    // }
+
+    btnArr[0].addEventListener("click",()=>{
+        console.log("btn 1 clicked");
+    })
+    // btnArr[1].addEventListener("click",()=>{
+    //     console.log("btn 2 clicked");
+    // })
+    
+    function changeStyle(element){
+        console.log(element);
+        element.style.backgroundColor="green";
+    }
+
+    // for(const element of btnArr){
+    //     element.addEventListener("click",()=>{
+    //         element.style.backgroundColor="green";
+    //     })
+    // }
+
+
+    // 2 Events on a single button---------------------------
+    btnArr[0].addEventListener("contextmenu",(e)=>{
+        console.log(e.target);
+        e.target.style.backgroundColor="Yellow";
+    })
+    btnArr[0].addEventListener("mouseover",(e)=>{
+        console.log(e.target);
+        e.target.style.color="Green";
+    })
+
+    //Events: KeyDown and KeyUp
+
+
+    window.addEventListener("blur",(e)=>{
+        document.querySelector("title").innerHTML="come back "
+    })
+    window.addEventListener("focus",(e)=>{
+        document.querySelector("title").innerHTML="ThankYou!!"
+    })
+
+    
+</script>
+</html>

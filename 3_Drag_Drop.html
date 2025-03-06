@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .draggable{
+            width:100px;
+            height:100px;
+            background-color:lightblue;
+            margin:10px;
+            display:inline-block;
+            text-align:center;
+            line-height:100px;
+            cursor:grab;
+        }
+
+        .droppable{
+            width:300px;
+            height:150px;
+            background-color:lightcoral;
+            margin:20px;
+            text-align: center;
+            line-height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="draggable" class="draggable" draggable="true">Drag Me</div>
+    <div id="droppable" class="droppable">Drop Here</div>
+
+    <script>
+    const draggable=document.getElementById('draggable');
+    const droppable=document.getElementById('droppable');
+
+    draggable.addEventListener('dragstart',(e)=>{
+        e.dataTransfer.setData('text/plain',e.target.id);
+        e.target.style.opacity='0.4';
+    });
+    draggable.addEventListener('dragend',(e)=>{
+        e.target.style.opacity='1';
+    });
+
+    droppable.addEventListener('dragover',(e)=>{
+        e.preventDefault();
+        droppable.style.backgroundColor='lightgreen';
+    });
+    droppable.addEventListener('dragleave',(e)=>{
+        droppable.style.backgroundColor='lightcora1';
+    });
+
+    droppable.addEventListener('drop',(e)=>{
+        e.preventDefault();
+        const id=e.dataTransfer.getData('text/plain');
+        const draggedElement=document.getElementById(id);
+        droppable.appendChild(draggedElement);
+        droppable.style.backgroundColor='lightcora1';
+        draggedElement.style.opacity='1';
+    });
+
+
+</script>
+</body>
+</html>

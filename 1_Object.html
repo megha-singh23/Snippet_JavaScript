@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let userDetails={
+            id:1,
+            name:"Megha Singh",
+            Skills:["C","C++","Java","MySQL","Servlet","JSP"],
+            Address:{
+                pin:1100201,
+                City:"Gurugram",
+                State:"Haryana"
+            },
+            add:(a,b)=>a+b,  //Function
+            fetchname:function(){s
+                console.log("Name is: "+this.name);
+            }
+        }
+
+        // console.log(userDetails.add(2,3));
+        // console.log(userDetails);
+        // userDetails.fetchname();
+        // console.log(userDetails.Skills);
+
+        // let {name:naam}=userDetails;
+        // console.log(naam);
+       //ArrayDestructuring------------------------
+        // let {Skills:[,skill1]}=userDetails;
+        // console.log(userDetails.Skills);
+        // console.log(skill0);
+        // console.log(skill1);
+
+
+        //Object Destructuring--------------------
+        let {Address:{pin:p}}=userDetails;
+        console.log(p);
+
+        // let All=Object.keys(userDetails)
+        // console.log(All);
+
+        // let All=Object.values(userDetails)
+        // console.log(All);
+
+        let entries=Object.entries(userDetails)
+        console.log(entries);
+    </script>
+</body>
+</html>
